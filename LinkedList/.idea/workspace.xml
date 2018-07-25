@@ -46,23 +46,18 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="41948446">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Driver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#189#190#0" expanded="true" />
-                <element signature="e#238#239#0" expanded="true" />
-                <element signature="class#Node#0;class#List#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -72,7 +67,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -87,7 +82,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="960" />
     <option name="y" value="-10" />
     <option name="width" value="960" />
@@ -99,6 +94,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
@@ -117,7 +113,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -196,6 +191,7 @@
       <workItem from="1532543645199" duration="244000" />
       <workItem from="1532543921209" duration="3536000" />
       <workItem from="1532550603662" duration="45000" />
+      <workItem from="1532550936841" duration="233000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored code and added a few other methods for good measure.">
       <created>1532550367099</created>
@@ -211,11 +207,18 @@
       <option name="project" value="LOCAL" />
       <updated>1532550639606</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Refactored code and added a few other methods for good measure.">
+      <created>1532550989641</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1532550989642</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13062000" />
+    <option name="totallyTimeSpent" value="13295000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-10" width="1920" height="1090" extended-state="6" />
@@ -226,13 +229,13 @@
       <window_info id="UI Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.14903846" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.15064102" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32869378" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="2" />
-      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.50106835" side_tool="true" visible="true" weight="0.32976446" />
-      <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49893162" visible="true" weight="0.32976446" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="3" sideWeight="0.5016026" side_tool="true" visible="true" weight="0.32976446" />
+      <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49839744" visible="true" weight="0.32976446" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
       <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49946582" weight="0.35974303" />
@@ -293,15 +296,12 @@
     <option name="LAST_COMMIT_MESSAGE" value="Refactored code and added a few other methods for good measure." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/LinkedListTinkering/LinkedListTinkering.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/LinkedListTinkering/LinkedListTinkering.iml" />
     <entry file="file://$PROJECT_DIR$/src/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="345">
+          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
           <folding>
-            <element signature="e#189#190#0" expanded="true" />
-            <element signature="e#238#239#0" expanded="true" />
             <element signature="class#Node#0;class#List#0" />
           </folding>
         </state>
