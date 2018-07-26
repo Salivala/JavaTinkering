@@ -1,10 +1,17 @@
+import org.jetbrains.annotations.Contract;
 
 /**
  * Simple exercise i'm doing to practice linked list surgery and linked list collections
  */
 public class Driver {
     public static void main(String[] args) {
-        List<Integer> list = new List<>();
+        List<Integer> list1 = new List<>();
+        List<Integer> list2 = new List<>();
+        list1.addSet(1,2,3);
+        list2.addSet(4,5,6);
+        list1.concatList(list2);
+        list2.concatList(list1);
+        list2.printAll();
     }
 }
 
@@ -32,24 +39,6 @@ class List<T> {
     // Init list as an empty list
     List () {}
 
-    /**
-     * Given an existing node, a list of values and an index
-     * of where to select the next value from the array,
-     * populate
-     * the list with the values in the array recursively
-     * NOTE: This is used internally and ideally, only once in the
-     * multi-value constructor
-     * @param current
-     * @param values
-     * @param currentArrIndex
-     */
-    private void addRest(Node<T> current, T[] values, int currentArrIndex) {
-        if (current != null && currentArrIndex < values.length) {
-            current.next = new Node<>(values[currentArrIndex]);
-            ++currentArrIndex;
-            addRest(current.next, values, currentArrIndex);
-        }
-    }
 
     /**
      * add set of values to possiblan existing linked list
@@ -70,12 +59,13 @@ class List<T> {
      * @param value : value to be added at the end of list
      */
     void add(T value) {
-        if (first != null) {
-            getLastNode(first).setNext(new Node<>(value));
-        }
-        else {
-            first = new Node<>(value);
-        }
+        if (first != null) getLastNode(first).setNext(new Node<>(value));
+        else first = new Node<>(value);
+    }
+
+    private void addNode(Node<T> newNode) {
+        if (first!=null) getLastNode(first).setNext(newNode);
+        else first = newNode;
     }
 
 
@@ -96,11 +86,37 @@ class List<T> {
     void printAll() {
         printAll(first);
     }
-    private void printAll(Node<T> current) {
-        System.out.println(current.getVal().toString());
-        if (current.hasNext()) {
-            printAll(current.getNext());
+
+    /**
+     * Given a list, add the first element of that list to the next of
+     * @param list
+     */
+    void linkList(List<T> list) {
+        Node<T> lastNode = this.getLastNode(this.first);
+        lastNode.setNext(list.first);
+    }
+
+    /**
+     *
+     * @param list
+     */
+    void concatList(List<T> list) {
+        this.addNode(this.buildList(list.first));
+    }
+
+    private Node<T> buildList(Node<T> current) {
+        if (current != null) {
+            Node<T> tmpNode = new Node<>(current.getVal());
+            tmpNode.setNext(buildList(current.getNext()));
+            return tmpNode;
         }
+        else {
+            return current;
+        }
+    }
+
+    T getFirst() {
+        return first.getVal();
     }
 
     /**
@@ -109,6 +125,33 @@ class List<T> {
     T getLast() {
         return getLastNode(first).getVal();
     }
+
+    /**
+     * Given an existing node, a list of values and an index
+     * of where to select the next value from the array,
+     * populate
+     * the list with the values in the array recursively
+     * NOTE: This is used internally and ideally, only once in the
+     * multi-value constructor
+     * @param current
+     * @param values
+     * @param currentArrIndex
+     */
+    private void addRest(Node<T> current, T[] values, int currentArrIndex) {
+        if (current != null && currentArrIndex < values.length) {
+            current.next = new Node<>(values[currentArrIndex]);
+            ++currentArrIndex;
+            addRest(current.next, values, currentArrIndex);
+        }
+    }
+
+    private void printAll(Node<T> current) {
+        System.out.println(current.getVal().toString());
+        if (current.hasNext()) {
+            printAll(current.getNext());
+        }
+    }
+
 
     /**
      * PRECONDITION : Node is non-null
@@ -130,8 +173,6 @@ class List<T> {
             return null;
         }
     }
-
-
 
     private class Node<T> {
         private T val;
