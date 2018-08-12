@@ -1,24 +1,29 @@
-import JavaTinkering.hsszyman.com.github.Streams.OldStreamIOClassPractice;
+import JavaTinkering.hsszyman.com.github.Streams.newFileStreamStuff.StreamPractice;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.OpenOption;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.Scanner;
 
 public class Driver {
     public static void main(String[] args) {
-        OldStreamIOClassPractice oldStream = new OldStreamIOClassPractice(new File("./src/wow.txt"));
-        String[] strs = {
-                "this is kinda like json, but not really",
-                "I like beans",
-                "But a lot of beans have high sodium",
-                "well.... not the beans themselves,",
-                "But if you buy the beans in a can with syrup,",
-                "depending on the can, it might have shockingly",
-                "high sodium and sugar!"
-        };
-        oldStream.writeStringsToFile(strs);
-        for (String k : oldStream.readStringsFromFile()) {
-            System.out.println(k);
+        Scanner scan = new Scanner(System.in);
+        String message;
+        while (!(message = scan.nextLine()).equals("end") ) {
+            writeFile(message);
         }
-        test();
+    }
+
+
+    public static void writeFile(String message) {
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get("./src/playingAround.txt"), StandardOpenOption.APPEND) ) {
+            writer.write(message);
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void test() {

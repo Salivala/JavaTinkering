@@ -1,13 +1,19 @@
 package JavaTinkering.hsszyman.com.github.List;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.ListIterator;
+
 /**
  * Simple implementation of a list
  * @param <T> : The data type that the list will store
  */
-public class List<T> {
+public class List<T> implements java.util.List<T> {
 
     // Keep a reference to the first node in the list
-    private Node<T> first;
+    private Node<T> first = null;
 
     // Init list with a single value
     public List (T value) {
@@ -39,13 +45,126 @@ public class List<T> {
     }
 
 
+    @Override
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return first == null;
+    }
+
+    @Override
+    public boolean contains(Object o) {
+        return false;
+    }
+
+    @NotNull
+    @Override
+    public Iterator<T> iterator() {
+        return null;
+    }
+
+    @NotNull
+    @Override
+    public Object[] toArray() {
+        return new Object[0];
+    }
+
+    @NotNull
+    @Override
+    public <T1> T1[] toArray(@NotNull T1[] a) {
+        return null;
+    }
+
     /**
      * Add a value to the end of the linked list
      * @param value : value to be added at the end of list
      */
-    public void add(T value) {
+    @Override
+    public boolean add(T value) {
         if (first != null) getLastNode(first).setNext(new Node<>(value));
         else first = new Node<>(value);
+    }
+
+
+    @Override
+    public boolean containsAll(@NotNull Collection<?> c) {
+        return false;
+    }
+
+    @Override
+    public boolean addAll(@NotNull Collection<? extends T> c) {
+        return false;
+    }
+
+    @Override
+    public boolean addAll(int index, @NotNull Collection<? extends T> c) {
+        return false;
+    }
+
+    @Override
+    public boolean removeAll(@NotNull Collection<?> c) {
+        return false;
+    }
+
+    @Override
+    public boolean retainAll(@NotNull Collection<?> c) {
+        return false;
+    }
+
+    @Override
+    public void clear() {
+
+    }
+
+    @Override
+    public T get(int index) {
+        return null;
+    }
+
+    @Override
+    public T set(int index, T element) {
+        return null;
+    }
+
+    @Override
+    public void add(int index, T element) {
+
+    }
+
+    @Override
+    public T remove(int index) {
+        return null;
+    }
+
+    @Override
+    public int indexOf(Object o) {
+        return 0;
+    }
+
+    @Override
+    public int lastIndexOf(Object o) {
+        return 0;
+    }
+
+    @NotNull
+    @Override
+    public ListIterator<T> listIterator() {
+        return null;
+    }
+
+    @NotNull
+    @Override
+    public ListIterator<T> listIterator(int index) {
+        return null;
+    }
+
+    @NotNull
+    @Override
+    public java.util.List<T> subList(int fromIndex, int toIndex) {
+        return null;
     }
 
     private void addNode(Node<T> newNode) {
@@ -54,8 +173,10 @@ public class List<T> {
     }
 
 
-    public boolean remove(T target) {
-        Node<T> tmpNode = find(target, first);
+    @Override
+    public boolean remove(Object target) throws ClassCastException{
+
+        Node<T> tmpNode = find((T) target, first); // not really sure how else to d oit
         boolean exists = false;
         if (first.getVal().equals(target)) {
             exists = true;

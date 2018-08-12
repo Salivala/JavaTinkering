@@ -1,12 +1,12 @@
-package JavaTinkering.hsszyman.com.github.Streams;
+package JavaTinkering.hsszyman.com.github.Streams.oldFileStreamStuff;
 
 
 import java.io.*;
 import java.util.ArrayList;
 
-public class OldStreamIOClassPractice {
+public class StreamPractice {
     File file;
-    public OldStreamIOClassPractice(File file) {
+    public StreamPractice(File file) {
         this.file = file;
     }
 
